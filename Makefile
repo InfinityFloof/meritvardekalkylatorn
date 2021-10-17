@@ -1,4 +1,4 @@
- meritkalc:
-	go build meritkalc.go
+studyhero:
+	go build studyhero.go
 install:
-	sudo mv meritkalc /usr/bin/meritkalc
+	sudo mv studyhero /usr/bin/studyhero
