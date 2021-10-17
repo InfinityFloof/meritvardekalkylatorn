@@ -18,7 +18,7 @@ func main() {
 	betyg["F"] = 0
 	fmt.Printf("OBS: Stora bokstäver!\n")
 	for i := 0; i < cap(amnen); i++ {
-		fmt.Printf("Skriv ditt %v betyg: ", amnen[i])
+		fmt.Printf("%v betyg: ", amnen[i])
 		fmt.Scanf("%v", &svar)
 		total += betyg[svar]
 	}
