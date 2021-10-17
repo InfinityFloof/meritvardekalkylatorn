@@ -1,5 +1,5 @@
-# Meritvardekalkylatorn
-Calculates a Swedish grade value
+# Studyherp
+Calculates a Swedish meritvalue and gives back suggestions on where to improve
 ## Install
 ```
 make
