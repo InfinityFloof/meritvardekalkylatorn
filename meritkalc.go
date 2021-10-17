@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 var (
-	amnen = []string{"Bild", "Biologi", "Engelska", "Fysik", "Geografi", "Hemkunskap", "Historia", "Idrott", "Kemi", "Matematik", "Moderna Språk", "Musik", "Religionkunskap", "Slöjd", "Svenska", "Teknik"}
+	amnen = []string{"Bild", "Biologi", "Engelska", "Fysik", "Geografi", "Hemkunskap", "Historia", "Idrott", "Kemi", "Matematik", "Moderna Språk", "Musik", "Religionkunskap", "Samhällskunskap", "Slöjd", "Svenska", "Teknik"}
 	betyg = make(map[string]float32)
 	svar  string
 	total float32
