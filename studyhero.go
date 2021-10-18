@@ -5,7 +5,7 @@ import "fmt"
 var (
 	personbetyg     = make(map[string]float32)
 	steg            = make(map[string]float32)
-	amnen           = []string{"Bild", "Biologi", "Engelska", "Fysik", "Geografi", "Hemkunskap", "Historia", "Idrott", "Kemi", "Matematik", "Moderna Språk", "Musik", "Religionkunskap", "Samhällskunskap", "Slöjd", "Svenska", "Teknik"}
+	amnen           = [17]string{"Bild", "Biologi", "Engelska", "Fysik", "Geografi", "Hemkunskap", "Historia", "Idrott", "Kemi", "Matematik", "Moderna Språk", "Musik", "Religionkunskap", "Samhällskunskap", "Slöjd", "Svenska", "Teknik"}
 	ezamnen         = []string{}
 	hdamnen         = []string{}
 	betyg           = make(map[string]float32)
@@ -55,7 +55,7 @@ func main() {
 	case 1:
 		for x := 0; x < 10; x++ {
 			// Försök 1, lätta betyg
-			for i := 0; i < cap(ezamnen); i++ {
+			for i := 0; i < len(ezamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[ezamnen[i]] != 0 {
 						if personbetyg[ezamnen[i]] != 20 {
@@ -71,7 +71,7 @@ func main() {
 				}
 			}
 			// Försök 2, lätta betyg
-			for i := 0; i < cap(ezamnen); i++ {
+			for i := 0; i < len(ezamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[ezamnen[i]] != 0 {
 						if personbetyg[ezamnen[i]] != 20 {
@@ -87,7 +87,7 @@ func main() {
 				}
 			}
 			// Försök 3, lätta betyg
-			for i := 0; i < cap(ezamnen); i++ {
+			for i := 0; i < len(ezamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[ezamnen[i]] != 0 {
 						if personbetyg[ezamnen[i]] != 20 {
@@ -103,7 +103,7 @@ func main() {
 				}
 			}
 			// Försök 3, svåra betyg
-			for i := 0; i < cap(hdamnen); i++ {
+			for i := 0; i < len(hdamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[hdamnen[i]] != 0 {
 						if personbetyg[hdamnen[i]] != 20 {
@@ -119,7 +119,7 @@ func main() {
 				}
 			}
 			// Försök 4, svåra betyg
-			for i := 0; i < cap(hdamnen); i++ {
+			for i := 0; i < len(hdamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[hdamnen[i]] != 0 {
 						if personbetyg[hdamnen[i]] != 20 {
@@ -138,7 +138,7 @@ func main() {
 	case 2:
 		// Försök 1, Lätta betyg
 		for x := 0; x <= 20; x++ {
-			for i := 0; i < cap(ezamnen); i++ {
+			for i := 0; i < len(ezamnen); i++ {
 				if personbetyg[ezamnen[i]] != 0 {
 					if personbetyg[ezamnen[i]] != 20 {
 						personbetyg[ezamnen[i]] += 2.5
@@ -154,7 +154,7 @@ func main() {
 		}
 		// Försök 2, Svåra betyg
 		for x := 0; x <= 20; x++ {
-			for i := 0; i < cap(hdamnen); i++ {
+			for i := 0; i < len(hdamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[hdamnen[i]] != 0 {
 						if personbetyg[hdamnen[i]] != 20 {
