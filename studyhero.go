@@ -57,50 +57,80 @@ func main() {
 			// Försök 1, lätta betyg
 			for i := 0; i < cap(ezamnen); i++ {
 				if differencemerit > 0 {
-					if personbetyg[ezamnen[i]] != 20 {
-						personbetyg[ezamnen[i]] += 2.5
+					if personbetyg[ezamnen[i]] != 0 {
+						if personbetyg[ezamnen[i]] != 20 {
+							personbetyg[ezamnen[i]] += 2.5
+							steg[ezamnen[i]] += 1
+							differencemerit -= 2.5
+						}
+					} else {
+						personbetyg[ezamnen[i]] += 10
 						steg[ezamnen[i]] += 1
-						differencemerit -= 2.5
+						differencemerit -= 10
 					}
 				}
 			}
 			// Försök 2, lätta betyg
 			for i := 0; i < cap(ezamnen); i++ {
 				if differencemerit > 0 {
-					if personbetyg[ezamnen[i]] != 20 {
-						personbetyg[ezamnen[i]] += 2.5
+					if personbetyg[ezamnen[i]] != 0 {
+						if personbetyg[ezamnen[i]] != 20 {
+							personbetyg[ezamnen[i]] += 2.5
+							steg[ezamnen[i]] += 1
+							differencemerit -= 2.5
+						}
+					} else {
+						personbetyg[ezamnen[i]] += 10
 						steg[ezamnen[i]] += 1
-						differencemerit -= 2.5
+						differencemerit -= 10
 					}
 				}
 			}
 			// Försök 3, lätta betyg
 			for i := 0; i < cap(ezamnen); i++ {
 				if differencemerit > 0 {
-					if personbetyg[ezamnen[i]] != 20 {
-						personbetyg[ezamnen[i]] += 2.5
+					if personbetyg[ezamnen[i]] != 0 {
+						if personbetyg[ezamnen[i]] != 20 {
+							personbetyg[ezamnen[i]] += 2.5
+							steg[ezamnen[i]] += 1
+							differencemerit -= 2.5
+						}
+					} else {
+						personbetyg[ezamnen[i]] += 10
 						steg[ezamnen[i]] += 1
-						differencemerit -= 2.5
+						differencemerit -= 10
 					}
 				}
 			}
 			// Försök 3, svåra betyg
 			for i := 0; i < cap(hdamnen); i++ {
 				if differencemerit > 0 {
-					if personbetyg[hdamnen[i]] != 20 {
-						personbetyg[hdamnen[i]] += 2.5
+					if personbetyg[hdamnen[i]] != 0 {
+						if personbetyg[hdamnen[i]] != 20 {
+							personbetyg[hdamnen[i]] += 2.5
+							steg[hdamnen[i]] += 1
+							differencemerit -= 2.5
+						}
+					} else {
+						personbetyg[hdamnen[i]] += 10
 						steg[hdamnen[i]] += 1
-						differencemerit -= 2.5
+						differencemerit -= 10
 					}
 				}
 			}
 			// Försök 4, svåra betyg
 			for i := 0; i < cap(hdamnen); i++ {
 				if differencemerit > 0 {
-					if personbetyg[hdamnen[i]] != 20 {
-						personbetyg[hdamnen[i]] += 2.5
+					if personbetyg[hdamnen[i]] != 0 {
+						if personbetyg[hdamnen[i]] != 20 {
+							personbetyg[hdamnen[i]] += 2.5
+							steg[hdamnen[i]] += 1
+							differencemerit -= 2.5
+						}
+					} else {
+						personbetyg[hdamnen[i]] += 10
 						steg[hdamnen[i]] += 1
-						differencemerit -= 2.5
+						differencemerit -= 10
 					}
 				}
 			}
@@ -109,12 +139,16 @@ func main() {
 		// Försök 1, Lätta betyg
 		for x := 0; x <= 20; x++ {
 			for i := 0; i < cap(ezamnen); i++ {
-				if differencemerit > 0 {
-					if personbetyg[ezamnen[i]] <= 20 {
+				if personbetyg[ezamnen[i]] != 0 {
+					if personbetyg[ezamnen[i]] != 20 {
 						personbetyg[ezamnen[i]] += 2.5
 						steg[ezamnen[i]] += 1
 						differencemerit -= 2.5
 					}
+				} else {
+					personbetyg[ezamnen[i]] += 10
+					steg[ezamnen[i]] += 1
+					differencemerit -= 10
 				}
 			}
 		}
@@ -122,10 +156,16 @@ func main() {
 		for x := 0; x <= 20; x++ {
 			for i := 0; i < cap(hdamnen); i++ {
 				if differencemerit > 0 {
-					if personbetyg[hdamnen[i]] <= 20 {
-						personbetyg[hdamnen[i]] += 2.5
+					if personbetyg[hdamnen[i]] != 0 {
+						if personbetyg[hdamnen[i]] != 20 {
+							personbetyg[hdamnen[i]] += 2.5
+							steg[hdamnen[i]] += 1
+							differencemerit -= 2.5
+						}
+					} else {
+						personbetyg[hdamnen[i]] += 10
 						steg[hdamnen[i]] += 1
-						differencemerit -= 2.5
+						differencemerit -= 10
 					}
 				}
 			}
