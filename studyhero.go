@@ -6,8 +6,8 @@ var (
 	personbetyg     = make(map[string]float32)
 	steg            = make(map[string]float32)
 	amnen           = []string{"Bild", "Biologi", "Engelska", "Fysik", "Geografi", "Hemkunskap", "Historia", "Idrott", "Kemi", "Matematik", "Moderna Språk", "Musik", "Religionkunskap", "Samhällskunskap", "Slöjd", "Svenska", "Teknik"}
-	ezamnen         = []string{"Biologi", "Engelska", "Fysik", "Geografi", "Historia", "Kemi", "Matematik", "Moderna Språk", "Religionkunskap", "Samhällskunskap", "Slöjd", "Svenska", "Teknik"}
-	hdamnen         = []string{"Bild", "Hemkunskap", "Idrott", "Musik"}
+	ezamnen         = []string{}
+	hdamnen         = []string{}
 	betyg           = make(map[string]float32)
 	svar            string
 	metod           int
@@ -31,7 +31,18 @@ func main() {
 		totalmerit += betyg[svar]
 	}
 	fmt.Printf("Ditt meritvärde är: %v\n", totalmerit)
-	fmt.Printf("Om du inte når dina mål så är det inte kört. Vad är ditt önskade meritvärde?: ")
+	fmt.Printf("Om du inte når dina mål så är det inte kört.\n")
+	fmt.Printf("Vi tittar vilka ämnen du tykcer är svåra\n")
+	for i := 0; i < len(amnen); i++ {
+		fmt.Printf("Tycker du %v är svårt? [J/N]: ", amnen[i])
+		fmt.Scanf("%v", &svar)
+		if svar == "J" {
+			hdamnen = append(hdamnen, amnen[i])
+		} else {
+			ezamnen = append(ezamnen, amnen[i])
+		}
+	}
+	fmt.Printf("Vad är ditt önskade meritvärde?: ")
 	fmt.Scanf("%v", &wishmerit)
 	differencemerit = wishmerit - totalmerit
 	fmt.Printf("För att få ditt önskade meritvärde måste vi uppnå %v poäng till\n", differencemerit)
@@ -42,59 +53,61 @@ func main() {
 	fmt.Scanf("%v", &metod)
 	switch metod {
 	case 1:
-		// Försök 1, lätta betyg
-		for i := 0; i < cap(ezamnen); i++ {
-			if differencemerit > 0 {
-				if personbetyg[ezamnen[i]] != 20 {
-					personbetyg[ezamnen[i]] += 2.5
-					steg[ezamnen[i]] += 1
-					differencemerit -= 2.5
+		for x := 0; x < 10; x++ {
+			// Försök 1, lätta betyg
+			for i := 0; i < cap(ezamnen); i++ {
+				if differencemerit > 0 {
+					if personbetyg[ezamnen[i]] != 20 {
+						personbetyg[ezamnen[i]] += 2.5
+						steg[ezamnen[i]] += 1
+						differencemerit -= 2.5
+					}
 				}
 			}
-		}
-		// Försök 2, lätta betyg
-		for i := 0; i < cap(ezamnen); i++ {
-			if differencemerit > 0 {
-				if personbetyg[ezamnen[i]] != 20 {
-					personbetyg[ezamnen[i]] += 2.5
-					steg[ezamnen[i]] += 1
-					differencemerit -= 2.5
+			// Försök 2, lätta betyg
+			for i := 0; i < cap(ezamnen); i++ {
+				if differencemerit > 0 {
+					if personbetyg[ezamnen[i]] != 20 {
+						personbetyg[ezamnen[i]] += 2.5
+						steg[ezamnen[i]] += 1
+						differencemerit -= 2.5
+					}
 				}
 			}
-		}
-		// Försök 3, lätta betyg
-		for i := 0; i < cap(ezamnen); i++ {
-			if differencemerit > 0 {
-				if personbetyg[ezamnen[i]] != 20 {
-					personbetyg[ezamnen[i]] += 2.5
-					steg[ezamnen[i]] += 1
-					differencemerit -= 2.5
+			// Försök 3, lätta betyg
+			for i := 0; i < cap(ezamnen); i++ {
+				if differencemerit > 0 {
+					if personbetyg[ezamnen[i]] != 20 {
+						personbetyg[ezamnen[i]] += 2.5
+						steg[ezamnen[i]] += 1
+						differencemerit -= 2.5
+					}
 				}
 			}
-		}
-		// Försök 3, svåra betyg
-		for i := 0; i < cap(hdamnen); i++ {
-			if differencemerit > 0 {
-				if personbetyg[hdamnen[i]] != 20 {
-					personbetyg[hdamnen[i]] += 2.5
-					steg[hdamnen[i]] += 1
-					differencemerit -= 2.5
+			// Försök 3, svåra betyg
+			for i := 0; i < cap(hdamnen); i++ {
+				if differencemerit > 0 {
+					if personbetyg[hdamnen[i]] != 20 {
+						personbetyg[hdamnen[i]] += 2.5
+						steg[hdamnen[i]] += 1
+						differencemerit -= 2.5
+					}
 				}
 			}
-		}
-		// Försök 4, svåra betyg
-		for i := 0; i < cap(hdamnen); i++ {
-			if differencemerit > 0 {
-				if personbetyg[hdamnen[i]] != 20 {
-					personbetyg[hdamnen[i]] += 2.5
-					steg[hdamnen[i]] += 1
-					differencemerit -= 2.5
+			// Försök 4, svåra betyg
+			for i := 0; i < cap(hdamnen); i++ {
+				if differencemerit > 0 {
+					if personbetyg[hdamnen[i]] != 20 {
+						personbetyg[hdamnen[i]] += 2.5
+						steg[hdamnen[i]] += 1
+						differencemerit -= 2.5
+					}
 				}
 			}
 		}
 	case 2:
 		// Försök 1, Lätta betyg
-		for x := 0; x <= 10; x++ {
+		for x := 0; x <= 20; x++ {
 			for i := 0; i < cap(ezamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[ezamnen[i]] <= 20 {
@@ -106,7 +119,7 @@ func main() {
 			}
 		}
 		// Försök 2, Svåra betyg
-		for x := 0; x <= 10; x++ {
+		for x := 0; x <= 20; x++ {
 			for i := 0; i < cap(hdamnen); i++ {
 				if differencemerit > 0 {
 					if personbetyg[hdamnen[i]] <= 20 {
@@ -118,7 +131,7 @@ func main() {
 			}
 		}
 	}
-	fmt.Printf("Du behöver öka i (Steg):\n")
+	fmt.Printf("Du kan öka i (Steg) för att nå ditt mål:\n")
 	for i := 0; i < cap(amnen); i++ {
 		fmt.Printf("%v: %v steg\n", amnen[i], steg[amnen[i]])
 	}
