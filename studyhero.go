@@ -23,16 +23,17 @@ func main() {
 	betyg["D"] = 12.5
 	betyg["E"] = 10
 	betyg["F"] = 0
-	fmt.Printf("OBS: Stora bokstäver!\n")
+	fmt.Println("OBS: Stora bokstäver!")
 	for i := 0; i < cap(amnen); i++ {
 		fmt.Printf("%v betyg: ", amnen[i])
 		fmt.Scanf("%v", &svar)
 		personbetyg[amnen[i]] = betyg[svar]
 		totalmerit += betyg[svar]
 	}
-	fmt.Printf("Ditt meritvärde är: %v\n", totalmerit)
-	fmt.Printf("Om du inte når dina mål så är det inte kört.\n")
-	fmt.Printf("Vi tittar vilka ämnen du tycker är svåra\n")
+	fmt.Printf("Ditt meritvärde är: %v", totalmerit)
+	fmt.Println()
+	fmt.Println("Om du inte når dina mål så är det inte kört.")
+	fmt.Println("Vi tittar vilka ämnen du tycker är svåra")
 	for i := 0; i < len(amnen); i++ {
 		fmt.Printf("Tycker du %v är svårt? [J/N]: ", amnen[i])
 		fmt.Scanf("%v", &svar)
@@ -45,10 +46,11 @@ func main() {
 	fmt.Printf("Vad är ditt önskade meritvärde?: ")
 	fmt.Scanf("%v", &wishmerit)
 	differencemerit = wishmerit - totalmerit
-	fmt.Printf("För att få ditt önskade meritvärde måste vi uppnå %v poäng till\n", differencemerit)
-	fmt.Printf("Det finns flera sätt vi kan lösa det här på\n")
-	fmt.Printf("1: Plugga flera ämnen men inte behöva höja mycket i dem\n")
-	fmt.Printf("2: Plugge färre ämnen men behöva uppnå högt i dem\n")
+	fmt.Printf("För att få ditt önskade meritvärde måste vi uppnå %v poäng till", differencemerit)
+	fmt.Println()
+	fmt.Println("Det finns flera sätt vi kan lösa det här på")
+	fmt.Println("1: Plugga flera ämnen men inte behöva höja mycket i dem")
+	fmt.Println("2: Plugge färre ämnen men behöva uppnå högt i dem")
 	fmt.Printf("Vad vill du göra?: ")
 	fmt.Scanf("%v", &metod)
 	switch metod {
@@ -173,7 +175,8 @@ func main() {
 	}
 	fmt.Printf("Du kan öka i (Steg) för att nå ditt mål:\n")
 	for i := 0; i < cap(amnen); i++ {
-		fmt.Printf("%v: %v steg\n", amnen[i], steg[amnen[i]])
+		fmt.Printf("%v: %v steg", amnen[i], steg[amnen[i]])
+		fmt.Println()
 	}
 
 }
