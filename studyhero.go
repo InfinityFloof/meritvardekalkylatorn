@@ -26,7 +26,7 @@ func main() {
 	fmt.Printf("OBS: Stora bokstäver!\n")
 	for i := 0; i < cap(amnen); i++ {
 		fmt.Printf("%v betyg: ", amnen[i])
-		fmt.Scanf(" %v", &svar)
+		fmt.Scanf("%v\n", &svar)
 		personbetyg[amnen[i]] = betyg[svar]
 		totalmerit += betyg[svar]
 	}
@@ -35,7 +35,7 @@ func main() {
 	fmt.Printf("Vi tittar vilka ämnen du tycker är svåra\n")
 	for i := 0; i < len(amnen); i++ {
 		fmt.Printf("Tycker du %v är svårt? [J/N]: ", amnen[i])
-		fmt.Scanf(" %v", &svar)
+		fmt.Scanf("%v\n", &svar)
 		if svar == "J" {
 			hdamnen = append(hdamnen, amnen[i])
 		} else {
@@ -43,14 +43,14 @@ func main() {
 		}
 	}
 	fmt.Printf("Vad är ditt önskade meritvärde?: ")
-	fmt.Scanf(" %v", &wishmerit)
+	fmt.Scanf("%v\n", &wishmerit)
 	differencemerit = wishmerit - totalmerit
 	fmt.Printf("För att få ditt önskade meritvärde måste vi uppnå %v poäng till\n", differencemerit)
 	fmt.Printf("Det finns flera sätt vi kan lösa det här på\n")
 	fmt.Printf("1: Plugga flera ämnen men inte behöva höja mycket i dem\n")
 	fmt.Printf("2: Plugge färre ämnen men behöva uppnå högt i dem\n")
 	fmt.Printf("Vad vill du göra?: ")
-	fmt.Scanf(" %v", &metod)
+	fmt.Scanf("%v\n", &metod)
 	switch metod {
 	case 1:
 		for x := 0; x < 10; x++ {
