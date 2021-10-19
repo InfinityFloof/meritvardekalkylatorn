@@ -179,5 +179,5 @@ func main() {
 	for i := 0; i < cap(amnen); i++ {
 		fmt.Printf("%v: %v steg\n", amnen[i], steg[amnen[i]])
 	}
-
+	fmt.Scanf("\n")
 }
