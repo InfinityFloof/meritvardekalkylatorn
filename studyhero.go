@@ -32,7 +32,7 @@ func main() {
 	}
 	fmt.Printf("Ditt meritvärde är: %v\n", totalmerit)
 	fmt.Printf("Om du inte når dina mål så är det inte kört.\n")
-	fmt.Printf("Vi tittar vilka ämnen du tykcer är svåra\n")
+	fmt.Printf("Vi tittar vilka ämnen du tycker är svåra\n")
 	for i := 0; i < len(amnen); i++ {
 		fmt.Printf("Tycker du %v är svårt? [J/N]: ", amnen[i])
 		fmt.Scanf("%v", &svar)
